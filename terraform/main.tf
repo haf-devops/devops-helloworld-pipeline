@@ -19,7 +19,7 @@ resource "azurerm_subnet" "subnet" {
 resource "azurerm_public_ip" "pip" {
   name                = "devops-pip"
   location            = data.azurerm_resource_group.rg.location
-  resource_group_name = azurerm_resource_group.rg.name
+  resource_group_name = data.azurerm_resource_group.rg.name
   allocation_method   = "Static"
   sku                 = "Standard"
 }
@@ -27,7 +27,7 @@ resource "azurerm_public_ip" "pip" {
 resource "azurerm_network_security_group" "nsg" {
   name                = "devops-nsg"
   location            = data.azurerm_resource_group.rg.location
-  resource_group_name = azurerm_resource_group.rg.name
+  resource_group_name = data.azurerm_resource_group.rg.name
 
   security_rule {
     name                       = "SSH"
@@ -56,7 +56,7 @@ resource "azurerm_network_security_group" "nsg" {
 resource "azurerm_network_interface" "nic" {
   name                = "devops-nic"
   location            = data.azurerm_resource_group.rg.location
-  resource_group_name = azurerm_resource_group.rg.name
+  resource_group_name = data.azurerm_resource_group.rg.name
 
   ip_configuration {
     name                          = "internal"
