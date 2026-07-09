@@ -69,7 +69,7 @@ resource "azurerm_network_interface" "nic" {
 resource "azurerm_linux_virtual_machine" "vm" {
   name                = "devops-vm"
   resource_group_name = data.azurerm_resource_group.rg.name
-  location            = azurerm_resource_group.rg.location
+  location            = data.azurerm_resource_group.rg.location
   size                = "Standard_B1s"
   admin_username      = "azureuser"
   network_interface_ids = [azurerm_network_interface.nic.id]
