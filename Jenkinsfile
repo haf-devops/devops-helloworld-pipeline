@@ -20,7 +20,7 @@ pipeline {
         stage('Terraform Init & Apply') {
             steps {
                 dir('terraform') {
-                    sh 'terraform init -input=false -migrate-state'
+                    sh 'terraform init -input=false -reconfigure'
                     sh 'terraform apply -auto-approve -input=false'
                 }
             }
