@@ -8,7 +8,7 @@ terraform {
   required_version = "~> 1.15.0"
 
   backend "azurerm" {
-    resource_group_name = "devops-helloworld-pipeline"
+    resource_group_name = "uk-devops-pipeline"
     storage_account_name = "storageaccount2697"
     container_name       = "tfstatefile"
     key                   = "devops-project.tfstate"
@@ -21,7 +21,7 @@ provider "azurerm" {
 }
 
 data "azurerm_resource_group" "rg" {
-  name     = "devops-helloworld-pipeline"
+  name     = "uk-devops-pipeline"
 }
 
 resource "azurerm_virtual_network" "vnet" {
